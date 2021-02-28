@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <title>Express</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <h1>Express</h1>
+    <p>Welcome to Express</p>
+
+    <p><button onclick="test()">Test</button></p>
+    <p><textarea id="data" rows="20" cols="80"></textarea></p>
+
+    <script type="text/javascript">
+        function test() {
+            for (let counter = 0; counter < 10; counter++) {
+                const login = counter % 2 ? 'guest' : 'admin';
+                loginAs(login);
+            }
+        }
+        function loginAs(user) {
+            fetch('http://localhost:3000/data/?login=' + user)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    document.getElementById('data').value += JSON.stringify(data) + '\n';
+                });
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p><button onclick="test()">Test</button></p>
+    <textarea id="data" cols="80" rows="10"></textarea>
+    <script type="text/javascript">
+        function test() {
+            print('start');
+
+            setTimeout(function () {
+                print('timeout');
+            }, 0);
+
+            Promise.resolve().then(function () {
+                print('promise');
+            });
+
+            print('end');
+        }
+
+        const target = document.getElementById('data');
+        function print(msg) {
+            target.value += msg + '\n';
+        }
+    </script>
+</body>
+
+</html>
