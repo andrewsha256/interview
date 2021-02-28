@@ -36,5 +36,4 @@ insert into players values (1, 'Robert Lewandowski', 9, 28, 1);
 insert into players values (2, 'Lionel Messi', 10, 19, 2);
 insert into players values (3, 'Andre Silva', 3, 19, 3);
 insert into players values (4, 'Cristiano Ronaldo', 7, 19, 4);
-insert into players values (2, 'Lionel Messi', 10, 19, 2);
 ```
