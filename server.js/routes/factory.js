@@ -25,6 +25,20 @@ const routerFactory = function ({
         next();
     });
 
+    // handles data
+    router.get('/data', async function (req, res, next) {
+        const query = req.query;
+
+        const data = await asyncDatabaseProcess(query);
+
+        if (isAdmin) {
+            const adminData = await asyncAdminProcess();
+            data['adminData'] = adminData;
+        }
+
+        res.send(data);
+    });
+
     // handles /data_1
     router.get('/data_1', async function (req, res, next) {
         if (isAdmin) {
@@ -41,20 +55,6 @@ const routerFactory = function ({
             // ...
         }
         res.send({});
-    });
-
-    // handles data
-    router.get('/data', async function (req, res, next) {
-        const query = req.query;
-
-        const data = await asyncDatabaseProcess(query);
-
-        if (isAdmin) {
-            const adminData = await asyncAdminProcess();
-            data['adminData'] = adminData;
-        }
-
-        res.send(data);
     });
 
     return router;
