@@ -20,6 +20,8 @@
 | 4   | Cristiano Ronaldo  | 7      | 19    | 4       |
 | 5   | ...                | ...    | ...   | ...     |
 
+## SQLite Example
+
 ```sql
 /** https://www.jdoodle.com/execute-sql-online/ */
 create table players(id int, name varchar, number int, goals int, club_id int);
