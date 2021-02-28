@@ -1,4 +1,4 @@
-# Goalscorers list
+# Goalscorers List
 
 ## Clubs
 
