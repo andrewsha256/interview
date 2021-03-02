@@ -24,8 +24,8 @@
 
 ```sql
 /** https://www.jdoodle.com/execute-sql-online/ */
-create table players(id int, name varchar, number int, goals int, club_id int);
 create table clubs(id int, name varchar);
+create table players(id int, name varchar, number int, goals int, club_id int, foreign key(club_id) REFERENCES clubs(id));
 
 insert into clubs values(1, 'Bayern Munich');
 insert into clubs values(2, 'Barcelona');
