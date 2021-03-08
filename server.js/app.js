@@ -8,10 +8,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 const services = require('./services');
-const dataRouterFactory = require('./routes/factory');
-const route = require('./routes/router');
+const asyncAwaitFactory = require('./routes/asyncawait-factory');
+const asyncAwaitRouter = require('./routes/asyncawait-router');
+const promiseRouter = require('./routes/promise-router');
 
-app.use('/', dataRouterFactory(services));
-//app.use('/', route);
+app.use('/asyncawait-factory', asyncAwaitFactory(services));
+app.use('/asyncawait-router', asyncAwaitRouter);
+app.use('/promise-router', promiseRouter);
 
 module.exports = app;

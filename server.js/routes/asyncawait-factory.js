@@ -39,8 +39,7 @@ const routerFactory = function ({
         res.send(data);
     });
 
-    // handles /data_1
-    router.get('/data_1', async function (req, res, next) {
+    router.post('/data', async function (req, res, next) {
         if (isAdmin) {
             // ...
         } else {
@@ -49,8 +48,7 @@ const routerFactory = function ({
         res.send({});
     });
 
-    // handles /data_2
-    router.get('/data_2', async function (req, res, next) {
+    router.delete('/data', async function (req, res, next) {
         if (isAdmin) {
             // ...
         }
