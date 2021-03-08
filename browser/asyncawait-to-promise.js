@@ -1,5 +1,9 @@
-async function asyncAwait(isAdmin) {
-    if (await checkAdmin(isAdmin)) {
+/**
+ * @param {string} username
+ * @return {Object}
+ */
+async function asyncAwait(username) {
+    if (await checkAdmin(username)) {
         return await getData();
     }
     return {};

@@ -1,3 +1,7 @@
+/**
+ * @param {string} username
+ * @return {Promise}
+ */
 function promise(username) {
     return checkAdmin(username).then((isAdmin) => {
         if (isAdmin) {
