@@ -3,18 +3,14 @@
  * @return {Promise}
  */
 function promise(username) {
-    return checkAdmin(username).then((isAdmin) => {
+    return isAdmin(username).then((isAdmin) => {
         if (isAdmin) {
-            return getData();
+            return getAdminData().then((adminData) => adminData);
         }
-        return {};
+        return getGuestData().then((guestData) => guestData);
     });
 }
 
-/**
- * @param {string} login
- * @return {Object}
- */
-async function asyncAwait(login) {
-    // return ...
+async function asyncAwait(username) {
+    // ...
 }

@@ -3,10 +3,10 @@
  * @return {Object}
  */
 async function asyncAwait(username) {
-    if (await checkAdmin(username)) {
-        return await getData();
+    if (await isAdmin(username)) {
+        return await getAdminData();
     }
-    return {};
+    return await getGuestData();
 }
 
 /**
