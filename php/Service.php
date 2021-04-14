@@ -7,7 +7,7 @@ use Test\DatabaseSingleton;  // Имплементация DatabaseInterface в 
 use Test\EntityInterface;
 use Test\EntityNotFoundException;
 
-class MyController {
+class MyService {
 
 	/**
 	 * @var DatabaseInterface
