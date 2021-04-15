@@ -4,10 +4,6 @@ interface NewsEntity {
   views: number; 
 }
 
-function extractCategoriesTop (list: Array<NewsEntity>) : Array<NewsEntity> {
-  return [];
-}
-
 function newsFactory(category: string, views: number) {
   const ret : NewsEntity = {
     category,
@@ -15,4 +11,9 @@ function newsFactory(category: string, views: number) {
   };
   return ret;
 }
+
+function extractCategoriesTop (list: Array<NewsEntity>) : Array<NewsEntity> {
+  return [];
+}
+
 ```
